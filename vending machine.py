@@ -118,7 +118,7 @@ def vend_machine():
     # use the def function for managing the number of items
     # for snack 1:
     def S1_stock():
-        x=6
+        x=6 # x is the CURRENT STOCK value
         while x >= 0:
             print("\033[3m\033[33m\t\t\t\t\tItem:",Available_Items['Snacks']['snack1']['PRODUCT'],"\n\t\t\t\t\tCurrent Stock:",(x-1),"\n\033[0m")
             break
