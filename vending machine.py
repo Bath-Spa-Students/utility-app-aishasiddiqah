@@ -549,16 +549,6 @@ def vend_machine():
             print("\nSince you have chosen",Available_Items['Drinks']['drink4']['PRODUCT'],", I would suggest buying",Available_Items['Snacks']['snack1']['PRODUCT'],"as well. They taste great together. ")
         elif choose == "D5":
             print("\nSince you have chosen",Available_Items['Drinks']['drink5']['PRODUCT'],", I would suggest buying",Available_Items['Snacks']['snack5']['PRODUCT'],"as well. They taste great together. ")
-
-    # a function that asks if the user would like additional items        
-    def add_choice(): 
-        add=int(input("\033[1m\nWould you like to buy anything else?\033[0m \n\033[32mIf yes, enter 1\nIf no, enter 0\n\033[0m"))
-        if add==1: # provides a suggestion and asks the user again to enter the code for the item they want 
-                extra_choice()
-                vend_machine()
-                pay()
-        if add==0: # stops the program and also prints a message
-                quit("\033[36m\n\t\t\t\tThank you for purchasing from the Vending Machine. \n\t\t\t\t\tHave a wonderful day!\n\033[0m")
     
     # a function that specifies which specific function needs to be put forward based on what the user buys 
     def pay():
