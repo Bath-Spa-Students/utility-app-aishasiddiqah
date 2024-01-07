@@ -582,6 +582,16 @@ def vend_machine():
             D4_pay()
         if choose == "D5":
             D5_pay()
+
+        # a function that asks if the user would like additional items        
+    def add_choice(): 
+        add=int(input("\033[1m\nWould you like to buy anything else?\033[0m \n\033[32mIf yes, enter 1\nIf no, enter 0\n\033[0m"))
+        if add==1: # provides a suggestion and asks the user again to enter the code for the item they want 
+                extra_choice()
+                vend_machine()
+                pay()
+        if add==0: # stops the program and also prints a message
+                quit("\033[36m\n\t\t\t\tThank you for purchasing from the Vending Machine. \n\t\t\t\t\tHave a wonderful day!\n\033[0m")
     pay()
 
 vend_machine()
