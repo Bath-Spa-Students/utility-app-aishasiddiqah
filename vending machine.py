@@ -582,5 +582,6 @@ def vend_machine():
                 pay()
         if add==0: # stops the program and also prints a message
                 quit("\033[36m\n\t\t\t\tThank you for purchasing from the Vending Machine. \n\t\t\t\t\tHave a wonderful day!\n\033[0m")
+    pay()
 
 vend_machine()
