@@ -556,7 +556,6 @@ def vend_machine():
         if add==1: # provides a suggestion and asks the user again to enter the code for the item they want 
                 extra_choice()
                 vend_machine()
-                str(input("\033[35m\nPlease enter the respective code of the product that you would like:\t\033[0m"))
                 pay()
         if add==0: # stops the program and also prints a message
                 quit("\033[36m\n\t\t\t\tThank you for purchasing from the Vending Machine. \n\t\t\t\t\tHave a wonderful day!\n\033[0m")
