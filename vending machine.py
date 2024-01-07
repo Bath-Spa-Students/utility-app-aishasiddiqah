@@ -206,6 +206,62 @@ def vend_machine():
         else:
             print("\033[33m\033[3m\t\t\t\tThe product",Available_Items['Drinks']['drink5']['PRODUCT'],"is no longer available.\033[0m")
 
+    # a function that makes suggestions based on what the user has already bought
+    def extra_choice():
+        if choose == "S1":
+            print("\nSince you have chosen",Available_Items['Snacks']['snack1']['PRODUCT'],", I would suggest buying",Available_Items['Drinks']['drink5']['PRODUCT'],"as well. They taste great together. ")
+        elif choose == "S2":
+            print("\nSince you have chosen",Available_Items['Snacks']['snack2']['PRODUCT'],", I would suggest buying",Available_Items['Drinks']['drink2']['PRODUCT'],"as well. They taste great together. ")
+        elif choose == "S3":
+            print("\nSince you have chosen",Available_Items['Snacks']['snack3']['PRODUCT'],", I would suggest buying",Available_Items['Drinks']['drink3']['PRODUCT'],"as well. They taste great together. ")
+        elif choose == "S4":
+            print("\nSince you have chosen",Available_Items['Snacks']['snack4']['PRODUCT'],", I would suggest buying",Available_Items['Drinks']['drink4']['PRODUCT'],"as well. They taste great together. ")
+        elif choose == "S5":
+            print("\nSince you have chosen",Available_Items['Snacks']['snack5']['PRODUCT'],", I would suggest buying",Available_Items['Drinks']['drink1']['PRODUCT'],"as well. They taste great together. ")
+        elif choose == "D1":
+            print("\nSince you have chosen",Available_Items['Drinks']['drink1']['PRODUCT'],", I would suggest buying",Available_Items['Snacks']['snack4']['PRODUCT'],"as well. They taste great together. ") 
+        elif choose == "D2":
+            print("\nSince you have chosen",Available_Items['Drinks']['drink2']['PRODUCT'],", I would suggest buying",Available_Items['Snacks']['snack3']['PRODUCT'],"as well. They taste great together. ")
+        elif choose == "D3":
+            print("\nSince you have chosen",Available_Items['Drinks']['drink3']['PRODUCT'],", I would suggest buying",Available_Items['Snacks']['snack2']['PRODUCT'],"as well. They taste great together. ")
+        elif choose == "D4":
+            print("\nSince you have chosen",Available_Items['Drinks']['drink4']['PRODUCT'],", I would suggest buying",Available_Items['Snacks']['snack1']['PRODUCT'],"as well. They taste great together. ")
+        elif choose == "D5":
+            print("\nSince you have chosen",Available_Items['Drinks']['drink5']['PRODUCT'],", I would suggest buying",Available_Items['Snacks']['snack5']['PRODUCT'],"as well. They taste great together. ")
+    
+    # a function that specifies which specific function needs to be put forward based on what the user buys 
+    def pay():
+        if choose == "S1": #if the user enter the code S1, the the S1_pay() function will be run (all the other functions have been defined similarly based on their respective code)
+            S1_pay()
+        if choose == "S2":
+            S2_pay()
+        if choose == "S3":
+            S3_pay()
+        if choose == "S4":
+            S4_pay()
+        if choose == "S5":
+            S5_pay()
+        if choose == "D1":
+            D1_pay()
+        if choose == "D2":
+            D2_pay()
+        if choose == "D3":
+            D3_pay()
+        if choose == "D4":
+            D4_pay()
+        if choose == "D5":
+            D5_pay()
+
+        # a function that asks if the user would like additional items        
+    def add_choice(): 
+        add=int(input("\033[1m\nWould you like to buy anything else?\033[0m \n\033[32mIf yes, enter 1\nIf no, enter 0\n\033[0m"))
+        if add==1: # provides a suggestion and asks the user again to enter the code for the item they want 
+                extra_choice()
+                vend_machine()
+                pay()
+        if add==0: # stops the program and also prints a message
+                quit("\033[36m\n\t\t\t\tThank you for purchasing from the Vending Machine. \n\t\t\t\t\tHave a wonderful day!\n\033[0m")
+    
     # set of functions defined for managing the purchasing of items
     # for snack 1:
     def S1_pay():
@@ -526,62 +582,5 @@ def vend_machine():
                 exit = int(input())
                 if exit == 0:
                     quit("\033[36m\033[1m\n\t\t\t\tHave a wonderful day! Goodbye.\n\033[0m")
-
-    # a function that makes suggestions based on what the user has already bought
-    def extra_choice():
-        if choose == "S1":
-            print("\nSince you have chosen",Available_Items['Snacks']['snack1']['PRODUCT'],", I would suggest buying",Available_Items['Drinks']['drink5']['PRODUCT'],"as well. They taste great together. ")
-        elif choose == "S2":
-            print("\nSince you have chosen",Available_Items['Snacks']['snack2']['PRODUCT'],", I would suggest buying",Available_Items['Drinks']['drink2']['PRODUCT'],"as well. They taste great together. ")
-        elif choose == "S3":
-            print("\nSince you have chosen",Available_Items['Snacks']['snack3']['PRODUCT'],", I would suggest buying",Available_Items['Drinks']['drink3']['PRODUCT'],"as well. They taste great together. ")
-        elif choose == "S4":
-            print("\nSince you have chosen",Available_Items['Snacks']['snack4']['PRODUCT'],", I would suggest buying",Available_Items['Drinks']['drink4']['PRODUCT'],"as well. They taste great together. ")
-        elif choose == "S5":
-            print("\nSince you have chosen",Available_Items['Snacks']['snack5']['PRODUCT'],", I would suggest buying",Available_Items['Drinks']['drink1']['PRODUCT'],"as well. They taste great together. ")
-        elif choose == "D1":
-            print("\nSince you have chosen",Available_Items['Drinks']['drink1']['PRODUCT'],", I would suggest buying",Available_Items['Snacks']['snack4']['PRODUCT'],"as well. They taste great together. ") 
-        elif choose == "D2":
-            print("\nSince you have chosen",Available_Items['Drinks']['drink2']['PRODUCT'],", I would suggest buying",Available_Items['Snacks']['snack3']['PRODUCT'],"as well. They taste great together. ")
-        elif choose == "D3":
-            print("\nSince you have chosen",Available_Items['Drinks']['drink3']['PRODUCT'],", I would suggest buying",Available_Items['Snacks']['snack2']['PRODUCT'],"as well. They taste great together. ")
-        elif choose == "D4":
-            print("\nSince you have chosen",Available_Items['Drinks']['drink4']['PRODUCT'],", I would suggest buying",Available_Items['Snacks']['snack1']['PRODUCT'],"as well. They taste great together. ")
-        elif choose == "D5":
-            print("\nSince you have chosen",Available_Items['Drinks']['drink5']['PRODUCT'],", I would suggest buying",Available_Items['Snacks']['snack5']['PRODUCT'],"as well. They taste great together. ")
-    
-    # a function that specifies which specific function needs to be put forward based on what the user buys 
-    def pay():
-        if choose == "S1": #if the user enter the code S1, the the S1_pay() function will be run (all the other functions have been defined similarly based on their respective code)
-            S1_pay()
-        if choose == "S2":
-            S2_pay()
-        if choose == "S3":
-            S3_pay()
-        if choose == "S4":
-            S4_pay()
-        if choose == "S5":
-            S5_pay()
-        if choose == "D1":
-            D1_pay()
-        if choose == "D2":
-            D2_pay()
-        if choose == "D3":
-            D3_pay()
-        if choose == "D4":
-            D4_pay()
-        if choose == "D5":
-            D5_pay()
-
-        # a function that asks if the user would like additional items        
-    def add_choice(): 
-        add=int(input("\033[1m\nWould you like to buy anything else?\033[0m \n\033[32mIf yes, enter 1\nIf no, enter 0\n\033[0m"))
-        if add==1: # provides a suggestion and asks the user again to enter the code for the item they want 
-                extra_choice()
-                vend_machine()
-                pay()
-        if add==0: # stops the program and also prints a message
-                quit("\033[36m\n\t\t\t\tThank you for purchasing from the Vending Machine. \n\t\t\t\t\tHave a wonderful day!\n\033[0m")
     pay()
-
 vend_machine()
